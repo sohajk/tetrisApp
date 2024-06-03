@@ -1,0 +1,46 @@
+[gd_scene load_steps=3 format=3 uid="uid://cc62nph1af6vd"]
+
+[ext_resource type="Texture2D" uid="uid://cqbc6u4quf8d0" path="res://assets/grid.png" id="1_de8t7"]
+[ext_resource type="Texture2D" uid="uid://gct45nymqkh6" path="res://assets/border.png" id="1_qo3bf"]
+
+[node name="main" type="Node"]
+
+[node name="PlaygroundBorder" type="TextureRect" parent="."]
+visible = false
+offset_left = -256.0
+offset_top = -496.0
+offset_right = 1794.0
+offset_bottom = 3474.0
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("1_qo3bf")
+
+[node name="PlaygroundGrid" type="TextureRect" parent="PlaygroundBorder"]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -960.0
+offset_top = -1924.5
+offset_right = 960.0
+offset_bottom = 1924.5
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_de8t7")
+stretch_mode = 1
+
+[node name="Panel" type="Panel" parent="."]
+offset_top = 30.0
+offset_right = 490.0
+offset_bottom = 1000.0
+
+[node name="TextureRect" type="TextureRect" parent="Panel"]
+offset_left = 5.0
+offset_top = 5.0
+offset_right = 1925.0
+offset_bottom = 3845.0
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("1_de8t7")
+stretch_mode = 1
