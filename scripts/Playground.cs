@@ -7,6 +7,7 @@ public partial class Playground : TextureRect
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready()
 	{
+		_tetrominoScene = (PackedScene)ResourceLoader.Load("res://scenes/tetromino.tscn");
 	}
 
 	// Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -14,9 +15,19 @@ public partial class Playground : TextureRect
 	{
 	}
 
-	public void SpawnTetromino(TetrominoItemHelper.TetrominoType currentTetrominoType)
+	public void SpawnTetromino(TetrominoItemHelper.TetrominoType currentTetrominoType, bool isNextPiece)
 	{
-		var tetrominoData = TetrominoItemHelper.Data[currentTetrominoType];
-		_tetrominoScene = (PackedScene)ResourceLoader.Load("res://scenes/snake_body_part.tscn");
+		// var tetrominoData = TetrominoItemHelper.Data[currentTetrominoType] as tetrominoModel;
+		var tetrominoData = TetrominoItemHelper.Data[TetrominoItemHelper.TetrominoType.I] as tetrominoModel;
+
+		var tetrominoSceneInstance = (Node)_tetrominoScene.Instantiate() as Tetromino;
+		tetrominoSceneInstance.Data = tetrominoData;
+		tetrominoSceneInstance.IsNextPiece = isNextPiece;
+
+		if (!isNextPiece)
+		{
+			tetrominoSceneInstance.Position = tetrominoData.SpawnPosition;
+			AddChild(tetrominoSceneInstance);
+		}
 	}
 }
