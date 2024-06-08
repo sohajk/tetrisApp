@@ -2,6 +2,7 @@ using System;
 using Godot;
 using Godot.Collections;
 
+[GlobalClass]
 public partial class TetrominoItemHelper : Node
 {
 	public enum TetrominoType
@@ -20,6 +21,6 @@ public partial class TetrominoItemHelper : Node
 
 	public static Dictionary<TetrominoType, Resource> Data = new Dictionary<TetrominoType, Resource>()
 	{
-		{ TetrominoType.I, ResourceLoader.Load("res://resources/modelDataI.tres") },
+		{ TetrominoType.I, ResourceLoader.Load("res://resources/dataModelI.tres") },
 	};
 }
