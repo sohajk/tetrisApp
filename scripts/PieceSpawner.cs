@@ -16,6 +16,4 @@ public partial class PieceSpawner : Node
 		_playground = GetNode<Playground>("../PlaygroundWrapper/Playground");
 		_playground.SpawnTetromino(_currentTetrominoType, false);
 	}
-
-
 }

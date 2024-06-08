@@ -17,8 +17,7 @@ public partial class Playground : TextureRect
 
 	public void SpawnTetromino(TetrominoItemHelper.TetrominoType currentTetrominoType, bool isNextPiece)
 	{
-		// var tetrominoData = TetrominoItemHelper.Data[currentTetrominoType] as tetrominoModel;
-		var tetrominoData = TetrominoItemHelper.Data[TetrominoItemHelper.TetrominoType.I] as tetrominoModel;
+		 var tetrominoData = TetrominoItemHelper.Data[currentTetrominoType] as tetrominoModel;
 
 		var tetrominoSceneInstance = (Node)_tetrominoScene.Instantiate() as Tetromino;
 		tetrominoSceneInstance.Data = tetrominoData;

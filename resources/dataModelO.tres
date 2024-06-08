@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="tetrominoModel" load_steps=3 format=3 uid="uid://l6v2ftwyhy7n"]
+
+[ext_resource type="Texture2D" uid="uid://bym1pr4n2ky0u" path="res://assets/tetrominoItems/yellow.png" id="1_n85fk"]
+[ext_resource type="Script" path="res://models/tetrominoModel.cs" id="1_sn3sx"]
+
+[resource]
+script = ExtResource("1_sn3sx")
+PieceTexture = ExtResource("1_n85fk")
+TetrominoType = 1
+SpawnPosition = Vector2(240, 48)
