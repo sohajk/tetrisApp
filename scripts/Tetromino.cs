@@ -50,10 +50,11 @@ public partial class Tetromino : Node2D
 	public override void _Process(double delta)
 	{
 		var shift = ControlHandler();
-			
+
 		_timeLastMove += delta * SPEED;
 
-		if (shift != default && _timeLastMove >= TIME_BETWEEN_MOVES) {
+		if (shift != default && _timeLastMove >= TIME_BETWEEN_MOVES)
+		{
 			_timeLastMove = 0;
 			Move(shift);
 		}
@@ -61,11 +62,7 @@ public partial class Tetromino : Node2D
 
 	private Vector2 ControlHandler()
 	{
-		if (Input.IsKeyPressed(Key.Up))
-		{
-			return Vector2.Up;
-		}
-		else if (Input.IsKeyPressed(Key.Right))
+		if (Input.IsKeyPressed(Key.Right))
 		{
 			return Vector2.Right;
 		}
@@ -80,6 +77,13 @@ public partial class Tetromino : Node2D
 
 		return default;
 	}
+
+	private Dictionary<string, int> bounds = new Dictionary<string, int>()
+	{
+		["min_x"] = -216,
+		["max_x"] = 216,
+		["max_y"] = 457
+	};
 
 	private void Move(Vector2 shift)
 	{
