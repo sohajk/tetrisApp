@@ -1,35 +1,10 @@
-[gd_scene load_steps=3 format=3 uid="uid://cc62nph1af6vd"]
+[gd_scene load_steps=4 format=3 uid="uid://cc62nph1af6vd"]
 
 [ext_resource type="Texture2D" uid="uid://cqbc6u4quf8d0" path="res://assets/grid.png" id="1_de8t7"]
-[ext_resource type="Texture2D" uid="uid://gct45nymqkh6" path="res://assets/border.png" id="1_qo3bf"]
+[ext_resource type="Script" path="res://scripts/Playground.cs" id="2_1xtcx"]
+[ext_resource type="Script" path="res://scripts/PieceSpawner.cs" id="2_smy4o"]
 
 [node name="main" type="Node2D"]
-
-[node name="Border" type="TextureRect" parent="."]
-visible = false
-offset_left = -256.0
-offset_top = -496.0
-offset_right = 1794.0
-offset_bottom = 3474.0
-scale = Vector2(0.25, 0.25)
-texture = ExtResource("1_qo3bf")
-
-[node name="Grid" type="TextureRect" parent="Border"]
-visible = false
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -960.0
-offset_top = -1924.5
-offset_right = 960.0
-offset_bottom = 1924.5
-grow_horizontal = 2
-grow_vertical = 2
-texture = ExtResource("1_de8t7")
-stretch_mode = 1
 
 [node name="PlaygroundWrapper" type="Panel" parent="."]
 offset_right = 520.0
@@ -44,6 +19,7 @@ offset_bottom = 3860.0
 scale = Vector2(0.25, 0.25)
 texture = ExtResource("1_de8t7")
 stretch_mode = 1
+script = ExtResource("2_1xtcx")
 
 [node name="InfoPanel" type="Panel" parent="."]
 offset_left = 520.0
@@ -73,3 +49,6 @@ size_flags_horizontal = 3
 text = "Score"
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="PieceSpawner" type="Node" parent="."]
+script = ExtResource("2_smy4o")
