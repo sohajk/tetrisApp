@@ -3,9 +3,9 @@
 [ext_resource type="Texture2D" uid="uid://cqbc6u4quf8d0" path="res://assets/grid.png" id="1_de8t7"]
 [ext_resource type="Texture2D" uid="uid://gct45nymqkh6" path="res://assets/border.png" id="1_qo3bf"]
 
-[node name="main" type="Node"]
+[node name="main" type="Node2D"]
 
-[node name="PlaygroundBorder" type="TextureRect" parent="."]
+[node name="Border" type="TextureRect" parent="."]
 visible = false
 offset_left = -256.0
 offset_top = -496.0
@@ -14,7 +14,7 @@ offset_bottom = 3474.0
 scale = Vector2(0.25, 0.25)
 texture = ExtResource("1_qo3bf")
 
-[node name="PlaygroundGrid" type="TextureRect" parent="PlaygroundBorder"]
+[node name="Grid" type="TextureRect" parent="Border"]
 visible = false
 layout_mode = 1
 anchors_preset = 8
@@ -31,16 +31,45 @@ grow_vertical = 2
 texture = ExtResource("1_de8t7")
 stretch_mode = 1
 
-[node name="Panel" type="Panel" parent="."]
-offset_top = 30.0
-offset_right = 490.0
+[node name="PlaygroundWrapper" type="Panel" parent="."]
+offset_right = 520.0
 offset_bottom = 1000.0
 
-[node name="TextureRect" type="TextureRect" parent="Panel"]
-offset_left = 5.0
-offset_top = 5.0
-offset_right = 1925.0
-offset_bottom = 3845.0
+[node name="Playground" type="TextureRect" parent="PlaygroundWrapper"]
+layout_mode = 0
+offset_left = 20.0
+offset_top = 20.0
+offset_right = 1940.0
+offset_bottom = 3860.0
 scale = Vector2(0.25, 0.25)
 texture = ExtResource("1_de8t7")
 stretch_mode = 1
+
+[node name="InfoPanel" type="Panel" parent="."]
+offset_left = 520.0
+offset_right = 750.0
+offset_bottom = 1000.0
+
+[node name="PreviewBox" type="HBoxContainer" parent="InfoPanel"]
+layout_mode = 0
+offset_right = 230.0
+offset_bottom = 500.0
+
+[node name="PreviewNext" type="Label" parent="InfoPanel/PreviewBox"]
+layout_mode = 2
+size_flags_horizontal = 6
+text = "Next tetromino
+"
+
+[node name="ScoreBox" type="HBoxContainer" parent="InfoPanel"]
+layout_mode = 2
+offset_top = 500.0
+offset_right = 230.0
+offset_bottom = 1000.0
+
+[node name="Score" type="Label" parent="InfoPanel/ScoreBox"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Score"
+horizontal_alignment = 1
+vertical_alignment = 1
