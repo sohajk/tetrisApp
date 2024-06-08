@@ -26,7 +26,9 @@ public partial class Tetromino : Node2D
 			var pieceSize = pieceSceneInstance.GetSize();
 			pieceSceneInstance.Position = cell * pieceSize;
 			pieceSceneInstance.Position += Data.SpawnPosition;
-			pieceSceneInstance.Position += new Vector2(-1015, 60);
+			
+			// Move to center
+			pieceSceneInstance.Position += new Vector2(2 * pieceSize.X, 1);
 
 			_pieces.Add(pieceSceneInstance);
 			AddChild(pieceSceneInstance);
