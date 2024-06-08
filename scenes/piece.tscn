@@ -1,0 +1,16 @@
+[gd_scene load_steps=4 format=3 uid="uid://de6bilc2wiyrj"]
+
+[ext_resource type="Script" path="res://scripts/Piece.cs" id="1_igpgg"]
+[ext_resource type="Texture2D" uid="uid://bvoww0wah1u33" path="res://assets/tetrominoItems/orange.png" id="2_n1gu2"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mwnxr"]
+size = Vector2(192, 192)
+
+[node name="PieceArea" type="Area2D"]
+script = ExtResource("1_igpgg")
+
+[node name="Piece" type="Sprite2D" parent="."]
+texture = ExtResource("2_n1gu2")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_mwnxr")

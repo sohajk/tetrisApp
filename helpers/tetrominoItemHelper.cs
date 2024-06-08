@@ -19,6 +19,11 @@ public partial class TetrominoItemHelper : Node
 		return (TetrominoType)types.GetValue(randomIndex);
 	}
 
+	public static Dictionary<TetrominoType, Vector2[]> Cells = new Dictionary<TetrominoType, Vector2[]>()
+	{
+		{ TetrominoType.I, new Vector2[] { new Vector2(-1, 0), new Vector2(0, 0), new Vector2(1, 0), new Vector2(2, 0) } },
+	};
+
 	public static Dictionary<TetrominoType, Resource> Data = new Dictionary<TetrominoType, Resource>()
 	{
 		{ TetrominoType.I, ResourceLoader.Load("res://resources/dataModelI.tres") },

@@ -4,7 +4,7 @@ using Godot;
 public partial class tetrominoModel : Resource
 {
 	[Export]
-	public Texture PieceTexture {get; set;}
+	public Texture2D PieceTexture {get; set;}
 
 	[Export]
 	public TetrominoItemHelper.TetrominoType TetrominoType {get; set;}
